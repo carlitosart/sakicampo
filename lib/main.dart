@@ -4,6 +4,7 @@ import 'package:sakil/cubit/app_cubit_logics.dart';
 import 'package:sakil/cubit/app_cubits.dart';
 import 'package:sakil/pages/detail_page.dart';
 import 'package:sakil/pages/navpages/main_page.dart';
+import 'package:sakil/pages/singin_up/login_page.dart';
 import 'package:sakil/pages/welcome_page.dart';
 import 'package:sakil/services/data_services.dart';
 
@@ -24,12 +25,12 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider<AppCubits>(
+      home: LoginPage()/*BlocProvider<AppCubits>(
         create: (context) => AppCubits(
           data: DataServices(),
         ),
         child: AppCubitLogics(),
-      )
+      )*/
     );
   }
 }
