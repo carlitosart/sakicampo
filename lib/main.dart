@@ -23,14 +23,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: LoginPage()/*BlocProvider<AppCubits>(
+      home: //LoginPage()
+      BlocProvider<AppCubits>(
         create: (context) => AppCubits(
           data: DataServices(),
         ),
         child: AppCubitLogics(),
-      )*/
+      )
     );
   }
 }
