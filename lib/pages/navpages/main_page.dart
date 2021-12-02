@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sakil/pages/navpages/bar_item_page.dart';
-import 'package:sakil/pages/navpages/home_page.dart';
+import 'package:sakil/pages/home_page.dart';
 import 'package:sakil/pages/navpages/my_page.dart';
 import 'package:sakil/pages/navpages/search_page.dart';
 
