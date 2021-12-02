@@ -1,0 +1,71 @@
+### OBTENIENDO STORES
+GET http://localhost:8083/country
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0
+
+###*****************************************
+
+
+###OBTENER TODOS LOS FILMS // EN TODOS LOS ENDPOINTS SE PONE EL ID DEL COUNTRY >:V
+###ULTIMAS 10 PELICULAS INCORPORADAS AL CATALOGO
+GET http://localhost:8083/film?country_id=8&page=0
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0
+
+###OBTENER el FILM POR NOMBRE PELICULA Y ACTOR
+GET http://localhost:8083/film?country_id=8&page=0&query=ACADEMY&actor=PENELOPE
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0
+
+###OBTENER FILM POR NOMBRE
+GET http://localhost:8083/film?country_id=8&page=0&query=ACADEMY
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0
+
+###OBTENER FILM POR ACTOR
+GET http://localhost:8083/film?country_id=8&page=0&actor=PENELOPE
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0
+
+
+
+###OBTENER PELICULAS POR LO MAS RENTADO SEGUN FECHA (SE ENVIA FECHA)
+GET http://localhost:8083/film/most-rented?country_id=8&page=0&date=2021-10-01
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0
+
+###PARA RENTAR PELICULAS PRUEBA 1 Y 2
+
+POST http://localhost:8083/film/rent?country_id=8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0
+
+{
+  "filmIds": [1,2]
+}
+
+***********************************************************
+
+### CREAR USUARIO
+POST http://localhost:8083/user
+Accept: application/json
+Content-Type: application/json
+
+{
+    "firstName":"Carlos N",
+    "lastName":"Peralta",
+    "email":"carlos@gmail.com",
+    "address":"direccion 1",
+    "address2":"direccion 2",
+    "district":"distrito",
+    "cityId":"2",
+    "postalCode":"1010",
+    "phone":"77713245",
+    "storeId":"1",
+    "password":"password"
+}
+
+### Obtener INFOR DE CUSTOMER
+GET http://localhost:8083/user
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJjYXJsb3NAZ21haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImlkIjo2MDAsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIzN2U3ZjkwMi1lNzg5LTQzYzEtYTEzMS0zMTE0ZTQ5MDc0MTUiLCJlbWFpbCI6ImNhcmxvc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJzYWtpbGEifQ.EZ7LsmGtcGaB3k0_4PoCtpnqgA0vK1_kz6HrHWhtU_0

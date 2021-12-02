@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sakil/cubit/app_cubits.dart';
 import 'package:sakil/misc/colors.dart';
 import 'package:sakil/widgets/app_large_text.dart';
 import 'package:sakil/widgets/app_text.dart';
@@ -13,7 +15,7 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   List images = [
-    "welcome-one.png",
+    "sakim3.png",
     "welcome-two.png",
     "welcome-three.png",
   ];
@@ -40,19 +42,26 @@ class _WelcomePageState extends State<WelcomePage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppLargeText(text: "Hola Mundo"),
-                        AppText(text: "HoliBoli", size: 30),
+                        AppLargeText(text: "Bienvenido a"),
+                        AppText(text: "Sakila Rental", size: 30),
                         SizedBox(height: 20,),
                         Container(
                           width: 250,
                           child: AppText(
-                            text: "Lalalalalalalalalalalalalalalalalala",
+                            text: "Una App que te permitira rentar peliculas, enjoy!",
                             color: AppColors.textColor2,
                             size: 14,
                           ),
                         ),
                         SizedBox(height: 20,),
-                        ResponsiveButton(width: 120,)
+                        GestureDetector(
+                          onTap: (){
+                            BlocProvider.of<AppCubits>(context).getData();
+                          },
+                          child: Container(
+                            width: 200,
+                              child: Row(children:[ResponsiveButton(width: 120,)])),
+                        )
                       ],
                     ),
                     Column(

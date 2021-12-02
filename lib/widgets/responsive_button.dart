@@ -19,7 +19,7 @@ class ResponsiveButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: isResponsive==true?MainAxisAlignment.spaceBetween:MainAxisAlignment.center,
           children: [
-            isResponsive==true?Container(margin: const EdgeInsets.only(left: 20),child: AppText(text: "Book Trip Now",color: Colors.white,)):Container(),
+            isResponsive==true?Container(margin: const EdgeInsets.only(left: 20),child: AppText(text: "Rentar Ahora",color: Colors.white,)):Container(),
             Image.asset("img/button-one.png"),
 
           ],
