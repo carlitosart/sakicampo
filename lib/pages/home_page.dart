@@ -39,9 +39,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   padding: const EdgeInsets.only(top: 70, left: 20),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.menu,
-                        size: 30,
+                      IconButton(
+                        onPressed: () {
+                          BlocProvider.of<AppCubits>(context).goInit();
+                        },
+                        icon: Icon(Icons.menu),
                         color: Colors.black54,
                       ),
                       Expanded(child: Container()),

@@ -28,4 +28,7 @@ class AppCubits extends Cubit<CubitStates>{
   goHome(){
     emit(LoadedState(movies));
   }
+  goInit(){
+    emit(WelcomeState());
+  }
 }

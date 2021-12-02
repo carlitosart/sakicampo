@@ -14,13 +14,14 @@ class ResponsiveButton extends StatelessWidget {
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: AppColors.mainColor,
+          color: Colors.white,
         ),
         child: Row(
           mainAxisAlignment: isResponsive==true?MainAxisAlignment.spaceBetween:MainAxisAlignment.center,
           children: [
             isResponsive==true?Container(margin: const EdgeInsets.only(left: 20),child: AppText(text: "Rentar Ahora",color: Colors.white,)):Container(),
-            Image.asset("img/button-one.png"),
+            Icon(Icons.play_arrow),
+
 
           ],
         ),

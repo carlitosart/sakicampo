@@ -15,7 +15,7 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   List images = [
-    "sakim3.png",
+    "sakim4.png",
     "welcome-two.png",
     "welcome-three.png",
   ];
@@ -42,14 +42,14 @@ class _WelcomePageState extends State<WelcomePage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppLargeText(text: "Bienvenido a"),
-                        AppText(text: "Sakila Rental", size: 30),
+                        AppLargeText(text: "Bienvenido a",color: Colors.white,),
+                        AppText(text: "Sakila Rental", size: 30,color: Colors.white.withOpacity(0.8),),
                         SizedBox(height: 20,),
                         Container(
                           width: 250,
                           child: AppText(
                             text: "Una App que te permitira rentar peliculas, enjoy!",
-                            color: AppColors.textColor2,
+                            color: Colors.white,
                             size: 14,
                           ),
                         ),
