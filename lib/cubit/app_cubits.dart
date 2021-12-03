@@ -17,7 +17,7 @@ class AppCubits extends Cubit<CubitStates>{
       emit(LoadedState(movies));
 
     }catch(e){
-      print("ERROROROROR");
+      print("FATAL ERROR");
     }
   }
 
