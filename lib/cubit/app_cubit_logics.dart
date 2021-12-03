@@ -20,9 +20,7 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
     return Scaffold(
       body: BlocBuilder<AppCubits,CubitStates>(
         builder: (context,state){
-          if(state is DetailState){
-            return DetailPage();
-          }if(state is WelcomeState){
+          if(state is WelcomeState){
             return WelcomePage();
           }if(state is LoadedState){
             return MainPage();

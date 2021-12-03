@@ -6,14 +6,14 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:sakil/model/data_model.dart';
 import 'package:sakil/pages/detail_page.dart';
-class SearchPage extends StatefulWidget {
-  SearchPage({Key? key}) : super(key: key);
+class ActorPage extends StatefulWidget {
+  ActorPage({Key? key}) : super(key: key);
 
   @override
-  State<SearchPage> createState() => _SearchPageState();
+  State<ActorPage> createState() => _ActorPageState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _ActorPageState extends State<ActorPage> {
   List<DataModel> movies=[];
 
   bool search=false;
@@ -62,7 +62,7 @@ class _SearchPageState extends State<SearchPage> {
               return
                 GestureDetector(
                   onTap: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>DetailPage(movie: data)));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>DetailPage(movie: data)));
                   },
                   child: Container(
                     decoration: BoxDecoration(image:
@@ -70,7 +70,7 @@ class _SearchPageState extends State<SearchPage> {
                         image: NetworkImage("http://picsum.photos/600/${600+Random().nextInt(100)}"),
                         fit: BoxFit.cover
                     ),
-                      borderRadius: BorderRadius.circular(10)
+                        borderRadius: BorderRadius.circular(10)
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -103,7 +103,7 @@ class _SearchPageState extends State<SearchPage> {
   getMovies(query)async{
 
     String baseUrl = "http://192.168.100.15:8083";
-    var apiUrl = '/film?country_id=8&page=0&query=${query}';
+    var apiUrl = '/film?country_id=8&page=0&actor=${query}';
     http.Response res = await http.get(Uri.parse(baseUrl+apiUrl));
     try{
       if(res.statusCode==200){

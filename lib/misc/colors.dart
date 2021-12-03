@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 class AppColors{
-  static final Color textColor1= Color(0xff39030f);
+  static final Color textColor1= Color(0xff000000);
   static final Color textColor2 = Color(0xFF490F1C);
   static final Color bigTextColor=Color(0xFF2e2e31);
   static final Color mainColor= Color(0xff7b0522);

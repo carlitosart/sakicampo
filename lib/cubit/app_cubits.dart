@@ -17,9 +17,11 @@ class AppCubits extends Cubit<CubitStates>{
       emit(LoadedState(movies));
 
     }catch(e){
+      print(e);
       print("FATAL ERROR");
     }
   }
+
 
   detailPage(DataModel data){
     emit(DetailState(data));

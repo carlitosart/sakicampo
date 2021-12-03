@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:sakil/pages/navpages/bar_item_page.dart';
+import 'package:sakil/pages/navpages/actor_page.dart';
 import 'package:sakil/pages/home_page.dart';
 import 'package:sakil/pages/navpages/my_page.dart';
 import 'package:sakil/pages/navpages/search_page.dart';
@@ -14,9 +14,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List pages = [
+  List<Widget> pages = [
     HomePage(),
-    BarItemPage(),
+    ActorPage(),
     SearchPage(),
     MyPage()
   ];
@@ -32,7 +32,10 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: pages[currentIndex],
+      body: IndexedStack(
+        children: pages,
+        index: currentIndex,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         unselectedFontSize: 0,
         selectedFontSize: 0,

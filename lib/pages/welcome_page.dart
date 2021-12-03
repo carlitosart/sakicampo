@@ -61,7 +61,15 @@ class _WelcomePageState extends State<WelcomePage> {
                           child: Container(
                             width: 200,
                               child: Row(children:[ResponsiveButton(width: 120,)])),
-                        )
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            BlocProvider.of<AppCubits>(context).getData();
+                          },
+                          child: Container(
+                              width: 200,
+                              child: Row(children:[ResponsiveButton(width: 120,)])),
+                        ),
                       ],
                     ),
                     Column(

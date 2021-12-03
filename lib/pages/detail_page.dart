@@ -3,13 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sakil/cubit/app_cubit_states.dart';
 import 'package:sakil/cubit/app_cubits.dart';
 import 'package:sakil/misc/colors.dart';
+import 'package:sakil/model/data_model.dart';
 import 'package:sakil/widgets/app_buttons.dart';
 import 'package:sakil/widgets/app_large_text.dart';
 import 'package:sakil/widgets/app_text.dart';
 import 'package:sakil/widgets/responsive_button.dart';
 
 class DetailPage extends StatefulWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  final DataModel movie;
+  const DetailPage({Key? key,required this.movie}) : super(key: key);
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -20,9 +22,7 @@ class _DetailPageState extends State<DetailPage> {
   int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppCubits, CubitStates>(builder: (context,state){
-      DetailState detail = state as DetailState;
-      return Scaffold(
+    return Scaffold(
         body: Container(
           width: double.maxFinite,
           height: double.maxFinite,
@@ -36,7 +36,7 @@ class _DetailPageState extends State<DetailPage> {
                     height: 350,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: NetworkImage("https://picsum.photos/"+detail.movies.length.toString()),
+                          image: NetworkImage("https://picsum.photos/"+widget.movie.length.toString()),
                           fit: BoxFit.cover),
                     ),
                   )),
@@ -74,12 +74,12 @@ class _DetailPageState extends State<DetailPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppLargeText(
-                              text: detail.movies.title,
+                              text: widget.movie.title,
                               color: Colors.black.withOpacity(0.8),
                               size: 20.0,
                             ),
                             AppLargeText(
-                              text: detail.movies.releaseYear.toString(),
+                              text: widget.movie.releaseYear.toString(),
                               color: AppColors.mainColor,
                             ),
                           ],
@@ -97,7 +97,7 @@ class _DetailPageState extends State<DetailPage> {
                               width: 5,
                             ),
                             AppText(
-                              text: detail.movies.length.toString(),
+                              text: widget.movie.length.toString(),
                               color: AppColors.textColor1,
                             )
                           ],
@@ -170,7 +170,7 @@ class _DetailPageState extends State<DetailPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        AppText(text: detail.movies.description,color: AppColors.mainTextColor,)
+                        AppText(text: widget.movie.description,color: AppColors.mainTextColor,)
                       ],
                     ),
                   )),
@@ -191,7 +191,6 @@ class _DetailPageState extends State<DetailPage> {
                     SizedBox(width: 20,),
                     ResponsiveButton(
                       isResponsive: true,
-
                     )
                   ],
                 ),)
@@ -199,6 +198,5 @@ class _DetailPageState extends State<DetailPage> {
           ),
         ),
       );
-    });
   }
 }
