@@ -140,6 +140,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     text: info[index].releaseYear.toString(),
                                     color: Colors.white,
                                   ),
+                                  AppText(
+                                    text: state.movies[index].count>0?state.movies[index].count.toString():"Agotado",
+                                    color: Colors.green,
+                                  ),
                                 ],
                               ),
                             ),
@@ -149,7 +153,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
                       //LISTAR LOS MAS RENTADOS DE LA ULTIMA SEMANA
                       ListView.builder(
-                        itemCount: info.length,
+                        itemCount: state.moviessem.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
@@ -158,7 +162,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          DetailPage(movie: info[index])));
+                                          DetailPage(movie: state.moviessem[index])));
                             },
                             child: Container(
                               margin: const EdgeInsets.only(right: 15, top: 10),
@@ -170,19 +174,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 image: DecorationImage(
                                     image: NetworkImage(
                                         "https://picsum.photos/" +
-                                            info[index].length.toString()),
+                                            state.moviessem[index].length.toString()),
                                     fit: BoxFit.cover),
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   AppText(
-                                    text: info[index].title,
+                                    text: state.moviessem[index].title,
                                     color: Colors.white,
                                   ),
                                   AppText(
-                                    text: info[index].releaseYear.toString(),
+                                    text: state.moviessem[index].releaseYear.toString(),
                                     color: Colors.white,
+                                  ),
+                                  AppText(
+                                    text: state.moviessem[index].count>0?state.moviessem[index].count.toString():"Agotado",
+                                    color: Colors.green,
                                   ),
                                 ],
                               ),
@@ -193,7 +201,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
                       //RENTAR LOS MAS RENTADOS DE TODOS LOS TIEMPOS
                       ListView.builder(
-                        itemCount: info.length,
+                        itemCount: state.moviestime.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
@@ -202,7 +210,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          DetailPage(movie: info[index])));
+                                          DetailPage(movie: state.moviestime[index])));
                             },
                             child: Container(
                               margin: const EdgeInsets.only(right: 15, top: 10),
@@ -214,19 +222,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 image: DecorationImage(
                                     image: NetworkImage(
                                         "https://picsum.photos/" +
-                                            info[index].length.toString()),
+                                            state.moviestime[index].length.toString()),
                                     fit: BoxFit.cover),
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   AppText(
-                                    text: info[index].title,
+                                    text: state.moviestime[index].title,
                                     color: Colors.white,
                                   ),
                                   AppText(
-                                    text: info[index].releaseYear.toString(),
+                                    text: state.moviestime[index].releaseYear.toString(),
                                     color: Colors.white,
+                                  ),
+                                  AppText(
+                                    text: state.moviestime[index].count>0?state.moviestime[index].count.toString():"Agotado",
+                                    color: Colors.green,
                                   ),
                                 ],
                               ),

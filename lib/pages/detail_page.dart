@@ -128,7 +128,12 @@ class _DetailPageState extends State<DetailPage> {
                           height: 25,
                         ),
                         AppLargeText(
-                          text: "Renta",
+                          text: "Unidades Disponibles para Rentar",
+                          color: Colors.black.withOpacity(0.8),
+                          size: 15,
+                        ),
+                        AppLargeText(
+                          text: widget.movie.count.toString(),
                           color: Colors.black.withOpacity(0.8),
                           size: 20,
                         ),

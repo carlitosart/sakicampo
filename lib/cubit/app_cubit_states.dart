@@ -28,8 +28,10 @@ class LoadingState extends CubitStates{
 }
 
 class LoadedState extends CubitStates{
-  LoadedState(this.movies);
+  LoadedState(this.movies,this.moviessem,this.moviestime);
   final List<DataModel> movies;
+  final List<DataModel> moviessem;
+  final List<DataModel> moviestime;
   @override
   // TODO: implement props
   List<Object> get props => [movies];

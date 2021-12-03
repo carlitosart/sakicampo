@@ -9,12 +9,17 @@ class AppCubits extends Cubit<CubitStates>{
   }
   final DataServices data;
   late final movies;
+  late final moviessem;
+  late final moviestime;
 
   void getData()async{
     try{
       emit(LoadingState());
       movies= await data.getInfo();
-      emit(LoadedState(movies));
+      print("datat");
+      moviessem= await data.getSem();
+      moviestime= await data.getTime();
+      emit(LoadedState(movies,moviessem,moviestime));
 
     }catch(e){
       print(e);
@@ -28,7 +33,7 @@ class AppCubits extends Cubit<CubitStates>{
   }
   
   goHome(){
-    emit(LoadedState(movies));
+    emit(LoadedState(movies,moviessem,moviestime));
   }
   goInit(){
     emit(WelcomeState());

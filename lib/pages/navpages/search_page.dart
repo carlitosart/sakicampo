@@ -25,7 +25,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       backgroundColor: Colors.black.withOpacity(0.05),
       appBar: AppBar(
-        title: !search?Text("Search App"):
+        title: !search?Text("Busqueda Titulo"):
         TextField(
           cursorColor: Colors.white,
           style: TextStyle(color: Colors.white),
